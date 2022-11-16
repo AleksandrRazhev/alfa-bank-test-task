@@ -17,7 +17,7 @@ export const fetchPhotos = createAsyncThunk<
   { rejectValue: FetchPhotosError }
 >("photos/fetchPhotos", async (_, thunkApi) => {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/photos?_limit=10"
+    "https://jsonplaceholder.typicode.com/photos?_limit=50"
   )
     .then((data) => data.json())
     .catch(() => thunkApi.rejectWithValue({ message: "Failed to fetch" }));
