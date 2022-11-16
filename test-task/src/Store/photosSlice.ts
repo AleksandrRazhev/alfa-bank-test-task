@@ -17,7 +17,7 @@ export const fetchPhotos = createAsyncThunk<
   { rejectValue: FetchPhotosError }
 >("photos/fetchPhotos", async (_, thunkApi) => {
   const res = await fetch(
-    "https://jsonplaceholder.typicode.com/photos?_limit=50"
+    "https://jsonplaceholder.typicode.com/photos?_limit=10"
   )
     .then((data) => data.json())
     .catch(() => thunkApi.rejectWithValue({ message: "Failed to fetch" }));
@@ -30,12 +30,6 @@ const PhotosSlice: Slice = createSlice({
   name: "photos",
   initialState,
   reducers: {
-    setPhotos(state, action: PayloadAction<PhotosPayloadAction>) {
-      state.photos = [...action.payload];
-    },
-    addPhoto(state, action: PayloadAction<Photo>) {
-      state.photos.push(action.payload);
-    },
     removePhoto(state, action: PayloadAction<number>) {
       state.photos.splice(action.payload, 1);
     },
@@ -75,5 +69,4 @@ const PhotosSlice: Slice = createSlice({
 });
 
 export default PhotosSlice.reducer;
-export const { setPhotos, likePhoto, addPhoto, removePhoto } =
-  PhotosSlice.actions;
+export const { likePhoto, removePhoto } = PhotosSlice.actions;
