@@ -61,7 +61,8 @@
 }
 
 .like,
-.delete {
+.delete,
+.likeLiked {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -78,7 +79,8 @@
   right: 1rem;
 }
 
-.like {
+.like,
+.likeLiked {
   left: 1rem;
 
   svg {
@@ -86,6 +88,15 @@
     height: 32px;
     path {
       fill: red;
+    }
+  }
+}
+
+.likeLiked {
+  background-color: red;
+  svg {
+    path {
+      fill: yellow;
     }
   }
 }

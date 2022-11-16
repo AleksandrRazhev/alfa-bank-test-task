@@ -58,7 +58,7 @@ export const Photos: React.FC = () => {
                   className={style.button}
                   onClick={() => dispatch(likePhoto(index))}
                 >
-                  <div className={style.like}>
+                  <div className={item.like ? style.likeLiked : style.like}>
                     <Like />
                   </div>
                 </button>
