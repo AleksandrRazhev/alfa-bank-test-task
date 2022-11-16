@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../Hooks/customDispatch";
 import { removePhoto, likePhoto, fetchPhotos } from "../../Store/photosSlice";
 import { Photo, PhotosStatus } from "../../Types/Types";
 import { Like } from "../svg/Like";
+import { Trash } from "../svg/Trash";
 
 import style from "./Photos.module.scss";
 
@@ -54,7 +55,7 @@ export const Photos: React.FC = () => {
                     className={style.delete}
                     onClick={() => dispatch(removePhoto(index))}
                   >
-                    удалить
+                    <Trash />
                   </button>
                   <button
                     className={style.button}
