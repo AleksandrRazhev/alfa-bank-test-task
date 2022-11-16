@@ -1,0 +1,103 @@
+.photos {
+  display: flex;
+  flex-direction: column;
+}
+
+.filterButton {
+  display: flex;
+  margin-bottom: 2rem;
+  width: fit-content;
+  padding: 1rem;
+  font-size: 1rem;
+  align-self: center;
+  border-radius: 1rem;
+  background-color: yellow;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (min-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  gap: 2rem;
+}
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.title {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.block {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: antiquewhite;
+}
+
+.like,
+.delete {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background-color: yellow;
+}
+
+.delete {
+  right: 1rem;
+}
+
+.like {
+  left: 1rem;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    path {
+      fill: red;
+    }
+  }
+}
+
+.liked {
+  $widthLiked: 10rem;
+  min-width: $widthLiked;
+  position: absolute;
+  bottom: 1rem;
+  top: 50%;
+  left: calc(50% - $widthLiked / 2);
+  font-size: 2rem;
+  text-align: center;
+  color: red;
+}
